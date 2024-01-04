@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-
+using Plugin.MauiMTAdmob;
 namespace RockBandNameMauiApp;
 
 public static class MauiProgram
@@ -9,6 +9,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
+			.UseMauiMTAdmob()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

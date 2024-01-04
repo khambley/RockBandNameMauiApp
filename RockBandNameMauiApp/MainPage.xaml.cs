@@ -4,6 +4,10 @@ namespace RockBandNameMauiApp;
 
 public partial class MainPage : ContentPage
 {
+	// For iOS Test Ads:
+	// AdsId="ca-app-pub-3940256099942544/2934735716"
+	// For Android Test Ads:
+	// AdsId="ca-app-pub-3940256099942544/6300978111"
 	public List<string> AdjectiveList { get; set; }
     public List<string> NounList { get; set; } 
 	public List<string> CoolPhrasesList { get; set; }
@@ -13,11 +17,19 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
 		// Get Metrics
 		var metrics = DeviceDisplay.MainDisplayInfo;
-		// if(metrics.Height > 2000)
-		// {
-		// 	rockMusicLogo.Margin = new Thickness(0, 30, 0, 30);
-		// }
-		if(DeviceInfo.Platform == DevicePlatform.Android)
+        // if(metrics.Height > 2000)
+        // {
+        // 	rockMusicLogo.Margin = new Thickness(0, 30, 0, 30);
+        // }
+
+		// Google Test Ad unit Ids
+        //myAds.AdsId = DeviceInfo.Platform == DevicePlatform.Android ? "ca-app-pub-3940256099942544/6300978111" : "ca-app-pub-3940256099942544/2934735716";
+
+		// My production Ad unit Ids
+		// Add the ad unit Ids back in before building.
+        myAds.AdsId = DeviceInfo.Platform == DevicePlatform.Android ? "not added to source control" : "not added to source control";
+
+        if (DeviceInfo.Platform == DevicePlatform.Android)
 		{
 			rockMusicLogo.Source = "rockmusiclogo1.png";
 		}
